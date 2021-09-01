@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Google Search</title>
+        <title>Google Images</title>
         <style>
             body {
                 font-family:arial,sans-serif;
@@ -59,17 +59,16 @@
     </head>
     <body>
         <div >  
-            <a href="images.html">Google Images</a>   
-            <a href="advanced.html">Google Advanced Search</a>          
+            <a href="index.html">Google Search</a>       
        </div>
        
-        <h1>Google</h1>
+        <h1>Google Images</h1>
        
         <form action="https://google.com/search" method="GET" style="margin-top: 30px;">
             <input type="text" name="q" id="FormField" >
                 <div style="margin-top: 20px;">
-                    <input type="submit"  value="Google Search" class="FormButton" >
-                    <input type="submit" name="btnI" value="I'm Feeling Lucky" class="FormButton">
+                    <input type="submit"  value="Search" class="FormButton">
+                    <input type="hidden" name="tbm" value="isch"/>
                 </div>
         </form>
     </body>
