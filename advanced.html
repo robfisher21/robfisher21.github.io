@@ -5,8 +5,10 @@
         <style>
             body {
                 font-family:arial,sans-serif;
-                font-size: 14px; 
+                font-style:normal;
+                font-size: 13px; 
                 text-align: center;
+                font-weight:400;
             }
 
             a { font-size: 13px; 
@@ -17,22 +19,20 @@
             }
 
             #FormField {
-                border-radius: 24px; 
-                border:1px solid #dfe1e5; 
-                background: #fff;
-                display: flex;
-                box-shadow: none;
-                z-index: 3;
-                height: 44px;
-                margin: 0 auto;
-                width: 80%; 
+                border-radius: 1px;
+                border: 1px solid #d9d9d9;
+                border-top: 1px solid #c0c0c0;
+                font-size: 13px;
+                height: 25px;
+                padding: 1px 8px;
+                font-weight: 400;
             }      
             
-            #FormField:hover {
-                background-color: #fff;
-                box-shadow: 0 1px 6px rgba(32,33,36,.28);
-                border-color: rgba(223,225,229,0);
-            }
+            #FormField:focus {
+                box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+                border: 1px solid #4d90fe;
+                outline: none;
+             }
             .FormButton {
                 border-radius:4px;
                 margin:11px 4px;
@@ -50,27 +50,138 @@
                 border: 1px solid #dadce0;
                 color: #202124;
             }
-                 
+
+            #AdvancedButton {
+
+                box-shadow: none;
+                background-color: #4d90fe;
+                background-image: linear-gradient(top,#4d90fe,#4787ed);
+                border: 1px solid #3079ed;
+                color: #fff;
+                height: 30px;
+                min-width 120px;
+                margin: 10px 16px 10px 0px;
+                padding: 0 12px;
+                border-radius: 2px;
+                font-size: 11px;
+                font-weight: bold;
+                text-align: center;
+                white-space: nowrap;
+           }
+
+           #AdvancedButton:hover {
+                background-color: #357ae8;
+                background-image: linear-gradient(top,#4d90fe,#357ae8);
+                border: 1px solid #2f5bb7;
+                border-image: initial;
+           }
+
+            .label {
+                display:inline-block; 
+                width:40%; 
+                line-height:16px; 
+                height:42px; 
+                text-align: left;
+                float:left;
+                vertical-align: middle;
+            }
+
+           .labelcell {
+            vertical-align: middle;  
+            height: 30px;
+            display: table-cell;          
+           }
+
+            .forminput {
+                display:inline-block; 
+                float:left; 
+                min-width:167px; 
+                min-height:41px; 
+                vertical-align:middle;
+                width:60%; 
+            }
+
+            .forminput > input {
+                
+                width:100%; 
+            }
+
+            #advanced
+            {
+                color:#d93025; 
+                text-align: left; 
+                font-size:20px; 
+                margin:0 0 15px 35px;
+                font-weight:400;
+                font-style:normal;
+                
+            }
+     
         </style>
             
-        <!--
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        --> 
-    </head>
+      </head>
     <body>
         <div >  
             <a href="index.html">Google Search</a>   
         </div>
        
-        <h1 style="color:#d93025">Advanced Search</h1>
-       
-        <form action="https://google.com/search" method="GET" style="margin-top: 30px;">
-            <input type="text" name="q" id="FormField" >
-                <div style="margin-top: 20px;">
-                    <input type="submit"  value="Google Search" class="FormButton" >
+        <h1 id="advanced">Advanced Search</h1>
+        <div style="border-top:1px solid #dfe1e5; margin-top:20px"></div>
+      
+        
+        <div style="width:80%;margin-left: 35px;">
+        
+        <p style="padding-top:30px; font-size:16px; text-align:left;margin-bottom:20px">Find pages with...</p>
+            
+        <form action="https://google.com/search" method="GET" >
+            <div class="label">
+                <div class="labelcell"> 
+                    <label for="all these words">all these words:</label>
                 </div>
-        </form>
+            </div>
+            
+            <div class="forminput">
+                <input type="text" name="as_q" id="FormField" >
+            </div>
+
+            <div class="label" style="clear:both">
+                <div class="labelcell"> 
+                    <label for="this exact word or phrase">this exact word or phrase:</label>
+                </div>
+            </div>
+               
+            <div class="forminput">
+                <input type="text" name="as_epq" id="FormField" >
+            </div>
+
+            <div class="label" style="clear:both">
+                <div class="labelcell"> 
+                    <label for="any of these words">any of these words</label>
+                </div>
+            </div>
+               
+            <div class="forminput">
+                <input type="text" name="as_oq" id="FormField" >
+            </div>
+
+            <div class="label" style="clear:both">
+                <div class="labelcell"> 
+                    <label for="none of these words">none of these words:</label>
+                </div>
+            </div>
+               
+            <div class="forminput">
+                <input type="text" name="as_eq" id="FormField" >
+            </div>
+            
+            <div style="display:inline-block; width:30%; clear:both; float:right;">
+                <input type="submit"  value="Advanced Search" id="AdvancedButton" >
+            </div>
+       </form>
+    </div>
     </body>
 </html>
+
+
 
 
